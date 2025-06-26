@@ -1678,6 +1678,10 @@ void main() {
 				ambient_light += hvec3(textureLod(sampler2DArray(lightmap_textures[ofs], SAMPLER_LINEAR_CLAMP), uvw, 0.0).rgb * lightmaps.data[ofs].exposure_normalization);
 			}
 		}
+#if defined(LIGHTMAPMOD_CODE_USED)
+		vec2 lightmap_uv = uvw.xy;
+#CODE : LIGHTMAPMOD
+#endif
 	}
 
 	// No GI nor non low end mode...

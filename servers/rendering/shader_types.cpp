@@ -225,6 +225,17 @@ ShaderTypes::ShaderTypes() {
 	shader_modes[RS::SHADER_SPATIAL].functions["light"].can_discard = true;
 	shader_modes[RS::SHADER_SPATIAL].functions["light"].main_function = true;
 
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].built_ins["FRAGCOORD"] = constt(ShaderLanguage::TYPE_VEC4);
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].built_ins["NORMAL"] = constt(ShaderLanguage::TYPE_VEC3);
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].built_ins["UV"] = constt(ShaderLanguage::TYPE_VEC2);
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].built_ins["UV2"] = constt(ShaderLanguage::TYPE_VEC2);
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].built_ins["VIEW"] = constt(ShaderLanguage::TYPE_VEC3);
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].built_ins["LIGHTMAP"] = ShaderLanguage::TYPE_VEC3;
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].built_ins["LIGHTMAP_UV"] = constt(ShaderLanguage::TYPE_VEC2);
+
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].can_discard = true;
+	shader_modes[RS::SHADER_SPATIAL].functions["lightmapmod"].main_function = true;
+
 	// spatial render modes
 	{
 		shader_modes[RS::SHADER_SPATIAL].modes.push_back({ PNAME("blend"), "mix", "add", "sub", "mul", "premul_alpha" });
