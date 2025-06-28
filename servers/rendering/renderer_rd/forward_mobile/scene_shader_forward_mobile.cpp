@@ -718,7 +718,7 @@ void SceneShaderForwardMobile::init(const String p_defines) {
 		actions.renames["SPECULAR_LIGHT"] = "specular_light_highp";
 
 		//for lightmapmod
-		actions.renames["LIGHTMAP"] = "ambient_light";
+		actions.renames["LIGHTMAP"] = "ambient_light_highp";
 		actions.renames["LIGHTMAP_UV"] = "lightmap_uv";
 
 		actions.usage_defines["NORMAL"] = "#define NORMAL_USED\n";

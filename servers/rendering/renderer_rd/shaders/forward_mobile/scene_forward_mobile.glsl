@@ -1680,7 +1680,9 @@ void main() {
 		}
 #if defined(LIGHTMAPMOD_CODE_USED)
 		vec2 lightmap_uv = uvw.xy;
+		vec3 ambient_light_highp = vec3(ambient_light);
 #CODE : LIGHTMAPMOD
+		ambient_light = hvec3(ambient_light_highp);
 #endif
 	}
 
